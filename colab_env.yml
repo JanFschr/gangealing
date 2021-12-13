@@ -1,0 +1,26 @@
+name: base
+channels:
+  - pytorch
+  - plotly
+  - defaults
+dependencies:
+  - pillow
+  - pip
+  - python
+  - pytorch=1.9.0
+  - scipy
+  - torchvision
+  - pip:
+    - moviepy
+    - numpy
+    - opencv-python
+    - pandas
+    - plotly
+    - tensorboard>=1.15
+    - tqdm
+    - wget
+    - lmdb
+    - ray
+    - ninja
+    - scikit-learn
+    - termcolor
