@@ -14,6 +14,9 @@ import ray
 import termcolor
 from tqdm import tqdm
 
+import os
+import sys
+sys.path.insert(1, os.path.dirname(sys.path[0]))
 
 def run_pck_transfer(args, t):
     loader = pck_dataloader(args.real_data_path, resolution=args.real_size, seed=args.seed, batch_size=args.batch,
