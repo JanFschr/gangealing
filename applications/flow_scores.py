@@ -4,6 +4,10 @@ produced by the STN for every image. These smoothness values are treated as scor
 dataset. An image with low (highly negative) smoothness corresponds to an image that should be removed.
 """
 
+import os
+import sys
+sys.path.insert(1, os.path.dirname(sys.path[0]))
+
 import torch
 from torch.utils.data import Subset
 from tqdm import tqdm
@@ -11,8 +15,6 @@ from models import total_variation_loss
 from applications import base_eval_argparse, load_stn, determine_flips
 from utils.distributed import setup_distributed, synchronize, all_gather, primary
 from datasets import img_dataloader
-import os
-
 
 def get_flow_scores(args, path, t):
     flow_score_path = f'{path}/flow_scores.pt'
