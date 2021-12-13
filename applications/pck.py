@@ -2,6 +2,9 @@
 This script evaluates PCK-Transfer (this is an efficient implementation that fully supports DistributedDataParallel).
 This can also be used to visualize key point transfers (--vis_transfer).
 """
+import os
+import sys
+sys.path.insert(1, os.path.dirname(sys.path[0]))
 
 import torch
 import numpy as np
@@ -14,9 +17,7 @@ import ray
 import termcolor
 from tqdm import tqdm
 
-import os
-import sys
-sys.path.insert(1, os.path.dirname(sys.path[0]))
+
 
 def run_pck_transfer(args, t):
     loader = pck_dataloader(args.real_data_path, resolution=args.real_size, seed=args.seed, batch_size=args.batch,
